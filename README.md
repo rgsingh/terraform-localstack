@@ -2,23 +2,23 @@
 
 ### LocalStack
 
-    docker-compose up -d
+    docker-compose -f docker-compose-localstack.yml up -d
 
 ### Script to manage infrastructure against LocalStack
-For M1 chip, [tf-ls.sh] script uses `--platform linux/amd64` to reference appropriate Terraform image.
-Remove this option if not running on a host with an Apple (M1) chip
+For Intel chipsets, override the environment variable `DOCKER_DEFAULT_PLATFORM` within `docker-compose-infra.yml`.
+The default value is set to `--platform linux/amd64` which references the AMD64 Terraform image for M1 chipsets.
 
 Terrform init
 
-    ./tf-ls.sh /my-workspace/terraform-localstack init
+    docker-compose -f docker-compose-infra.yml run --rm terraform init
 
 Terraform plan (single quotes are required)
 
-    ./tf-ls.sh /my-workspace/terraform-localstack 'plan -var-file tfvars/input.tfvars -out output.tfplan'
+    docker-compose -f docker-compose-infra.yml run --rm terraform plan -var-file tfvars/input.tfvars -out output.tfplan
 
 Terraform apply (single quotes are required)
 
-    ./tf-ls.sh /my-workspace/terraform-localstack 'apply output.tfplan'
+    docker-compose -f docker-compose-infra.yml run --rm terraform apply output.tfplan
 
 
 ## Verify Deployment of Infrastructure Resources
