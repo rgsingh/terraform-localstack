@@ -1,0 +1,7 @@
+bucket = "org-tf-state-backend"
+key = "my-cool-app/terraform-tfstate"
+encrypt = true
+dynamodb_table = "terraform_state"
+region = "us-east-1"
+shared_credentials_file = "/aws"
+profile = "localstack"

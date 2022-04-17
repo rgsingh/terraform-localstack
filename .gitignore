@@ -1,2 +1,2 @@
 .idea/*
-infrastructure/.terraform
+terraform/.terraform
