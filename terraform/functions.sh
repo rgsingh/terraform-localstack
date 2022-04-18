@@ -33,7 +33,6 @@ function terraform () {
     # This mount allows docker in docker calls
     docker run \
       --tty \
-      --rm \
       --env-file .env \
       --env AWS_PROFILE \
       --volume /var/run/docker.sock:/var/run/docker.sock \

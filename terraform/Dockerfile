@@ -11,6 +11,6 @@ COPY lambda/app/* /go/lambda/app/
 COPY lambda/* /go/lambda/
 RUN apk add --no-cache --update docker
 RUN AWS_PROFILE="${AWS_PROFILE}" \
-  terraform init -backend-config=/go/org-tf-state.tfbackend
+  terraform init
 WORKDIR .
 ENTRYPOINT ["/bin/terraform"]

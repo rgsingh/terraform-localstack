@@ -11,6 +11,7 @@ provider "aws" {
     cloudformation   = "http://host.docker.internal:4566"
     cloudwatch       = "http://host.docker.internal:4566"
     cloudwatchevents = "http://host.docker.internal:4566"
+    cloudwatchlogs   = "http://host.docker.internal:4566"
     dynamodb         = "http://host.docker.internal:4566"
     ec2              = "http://host.docker.internal:4566"
     es               = "http://host.docker.internal:4566"
