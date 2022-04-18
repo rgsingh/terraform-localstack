@@ -1,7 +1,7 @@
 variable "schedule_expression" {
   description = "Schedule of run"
   type        = string
-  default     = "rate(5 minutes)"
+  default     = "rate(60 minutes)"
 }
 
 variable "region" {
